@@ -38,3 +38,8 @@ ON (e.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
     AND (de.to_date = '9999-01-01')
 ORDER BY e.emp_no;
+
+-- Count all employees eligible for mentorship per department
+SELECT titles, COUNT(*)
+FROM mentorship_eligibility
+GROUP BY titles
